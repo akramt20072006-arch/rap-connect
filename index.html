@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b0f">
+  <title>RAP CONNECT — La scène commence ici</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <a class="brand" href="#">
+      <span class="brand-mark">R</span>
+      <span>RAP<span class="brand-accent">CONNECT</span></span>
+    </a>
+
+    <div class="profile-mini">
+      <div class="avatar avatar-you">Y</div>
+      <div>
+        <strong id="sideName">Your name</strong>
+        <small id="sideRole">Artiste · Paris</small>
+      </div>
+      <span class="online-dot"></span>
+    </div>
+
+    <nav class="main-nav">
+      <button class="nav-link active" data-page="home"><span>⌂</span> Accueil</button>
+      <button class="nav-link" data-page="explore"><span>⌕</span> Explorer</button>
+      <button class="nav-link" data-page="projects"><span>▤</span> Projets <b class="nav-count">2</b></button>
+      <button class="nav-link" data-page="messages"><span>✉</span> Messages <b class="nav-count">3</b></button>
+      <button class="nav-link" data-page="profile"><span>◉</span> Mon profil</button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="upgrade-card">
+        <span class="spark">✦</span>
+        <strong>Fais grandir ton réseau.</strong>
+        <p>Rencontre les talents qui feront ton prochain morceau.</p>
+        <button class="btn btn-light btn-small" data-page="explore">
+          Découvrir la scène
+        </button>
+      </div>
+
+      <button class="nav-link muted"><span>⚙</span> Paramètres</button>
+      <div class="side-foot">RAP CONNECT <span>© 2026</span></div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <header class="topbar">
+      <div class="mobile-brand">
+        <span class="brand-mark">R</span>
+        RAP<span class="brand-accent">CONNECT</span>
+      </div>
+
+      <div class="breadcrumb" id="breadcrumb">
+        Ton espace créatif <span>/</span> Accueil
+      </div>
+
+      <div class="top-actions">
+        <label class="searchbox">
+          <span>⌕</span>
+          <input id="globalSearch" type="search" placeholder="Rechercher un talent, un son...">
+        </label>
+
+        <button class="icon-btn notification" aria-label="Notifications">♧<i></i></button>
+        <button class="avatar avatar-you top-avatar" data-page="profile">Y</button>
+      </div>
+    </header>
+
+    <!-- ACCUEIL -->
+    <section class="page active" id="page-home">
+
+      <div class="welcome-row">
+        <div>
+          <p class="eyebrow">MERCREDI 11 NOVEMBRE 2026</p>
+          <h1>La scène commence <span>ici.</span></h1>
+          <p class="subheading">
+            Connecte-toi aux bonnes personnes. Crée quelque chose qui compte.
+          </p>
+        </div>
+
+        <button class="btn btn-primary" id="openPost">
+          ＋ Partager une actualité
+        </button>
+      </div>
+
+      <div class="hero-banner">
+        <div class="hero-copy">
+          <span class="pill pill-purple">COMMUNAUTÉ MONDIALE</span>
+
+          <h2>Un talent. Une rencontre.<br><em>Un nouveau morceau.</em></h2>
+
+          <p>
+            Artistes, beatmakers, producteurs et créatifs :
+            faites avancer vos projets ensemble.
+          </p>
+
+          <button class="btn btn-white" data-page="explore">
+            Explorer les talents <span>↗</span>
+          </button>
+        </div>
+
+        <div class="hero-art">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="hero-disc">RC<span>✦</span></div>
+          <div class="floating-tag tag-one">BEATS / 2026</div>
+          <div class="floating-tag tag-two">WORLDWIDE</div>
+          <div class="equalizer">
+            <i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">TON UNIVERS</p>
+          <h2>À découvrir pour toi</h2>
+        </div>
+        <button class="text-link" data-page="explore">Tout explorer ↗</button>
+      </div>
+
+      <div class="universe-tabs">
+        <button class="universe-tab active" data-universe="all">Pour toi</button>
+        <button class="universe-tab" data-universe="artist">Univers artistes</button>
+        <button class="universe-tab" data-universe="producer">Univers producteurs</button>
+        <button class="universe-tab" data-universe="community">Scène mondiale</button>
+      </div>
+
+      <div class="content-grid" id="talentGrid"></div>
+
+      <div class="section-heading section-gap">
+        <div>
+          <p class="eyebrow">LA COMMUNAUTÉ BOUGE</p>
+          <h2>Dans la scène mondiale</h2>
+        </div>
+        <button class="text-link" data-page="explore">Voir la communauté ↗</button>
+      </div>
+
+      <div class="community-strip">
+        <div class="community-icon">✳</div>
+        <div>
+          <strong>Les collaborations n'ont pas de frontières.</strong>
+          <p>
+            Découvre les sorties, appels à projets et talents actifs partout dans le monde.
+          </p>
+        </div>
+        <button class="btn btn-outline" data-page="explore">Voir les publications</button>
+      </div>
+    </section>
+
+    <!-- EXPLORER -->
+    <section class="page" id="page-explore">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">TROUVE TON PROCHAIN COLLABORATEUR</p>
+          <h1>Explorer la scène</h1>
+          <p class="subheading">Des profils, des sons et des idées à connecter.</p>
+        </div>
+        <span class="result-count" id="resultCount">6 talents</span>
+      </div>
+
+      <div class="filter-row">
+        <label class="searchbox filter-search">
+          <span>⌕</span>
+          <input id="exploreSearch" type="search" placeholder="Nom, spécialité, style...">
+        </label>
+
+        <select id="roleFilter">
+          <option value="all">Tous les profils</option>
+          <option value="Artiste">Artistes</option>
+          <option value="Producteur">Producteurs</option>
+          <option value="Beatmaker">Beatmakers</option>
+          <option value="Ingénieur son">Ingénieurs son</option>
+        </select>
+
+        <select id="genreFilter">
+          <option value="all">Tous les styles</option>
+          <option>Trap</option>
+          <option>Drill</option>
+          <option>Boom bap</option>
+          <option>Afro</option>
+          <option>R&B</option>
+        </select>
+      </div>
+
+      <div class="content-grid explore-grid" id="exploreGrid"></div>
+    </section>
+
+    <!-- PROJETS -->
+    <section class="page" id="page-projects">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">DU PREMIER MESSAGE AU MORCEAU FINAL</p>
+          <h1>Mes projets</h1>
+          <p class="subheading">Organise tes collaborations au même endroit.</p>
+        </div>
+        <button class="btn btn-primary" id="newProject">＋ Nouveau projet</button>
+      </div>
+
+      <div class="project-stats">
+        <div><small>EN COURS</small><strong>02</strong></div>
+        <div><small>EN ATTENTE</small><strong>01</strong></div>
+        <div><small>TERMINÉS</small><strong>08</strong></div>
+      </div>
+
+      <div class="project-list" id="projectList"></div>
+    </section>
+
+    <!-- MESSAGES -->
+    <section class="page" id="page-messages">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">FAIS AVANCER LES IDÉES</p>
+          <h1>Messages</h1>
+          <p class="subheading">Tes échanges et propositions de collaboration.</p>
+        </div>
+      </div>
+
+      <div class="messages-layout">
+        <div class="conversation-list" id="conversationList"></div>
+
+        <div class="chat-panel">
+          <div class="chat-empty">
+            <div class="chat-symbol">✉</div>
+            <h3>Choisis une conversation</h3>
+            <p>Les bonnes collaborations commencent souvent par un message.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFIL -->
+    <section class="page" id="page-profile">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">TON IDENTITÉ CRÉATIVE</p>
+          <h1>Mon profil</h1>
+          <p class="subheading">Présente ton univers et les projets que tu veux créer.</p>
+        </div>
+        <button class="btn btn-outline" id="editProfile">Modifier le profil</button>
+      </div>
+
+      <div class="profile-cover">
+        <div class="profile-avatar-large">Y</div>
+
+        <div class="profile-info">
+          <span class="pill pill-green">● DISPONIBLE POUR COLLABORER</span>
+          <h2 id="profileName">Your name</h2>
+          <p id="profileMeta">Artiste · Paris, France</p>
+          <div class="tag-list">
+            <span>Trap</span>
+            <span>Drill</span>
+            <span>Rap mélodique</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-columns">
+        <div class="panel">
+          <div class="panel-title"><h3>À propos</h3></div>
+          <p>
+            Je développe mon univers musical et je cherche des créatifs motivés
+            pour construire des projets solides, du premier kick au morceau final.
+          </p>
+          <div class="detail-line"><span>Langues</span><strong>Français · Anglais</strong></div>
+          <div class="detail-line"><span>Objectif</span><strong>Collaborations & sorties</strong></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">
+            <h3>Mon portfolio</h3>
+            <button class="text-link">＋ Ajouter</button>
+          </div>
+          <div class="portfolio-placeholder">
+            <span>♫</span>
+            <strong>Ton prochain son commence ici</strong>
+            <small>Ajoute tes morceaux, démos et projets.</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <span>RAP CONNECT — Plus qu'une appli, une communauté.</span>
+      <span>Concept démo · 2026</span>
+    </footer>
+
+  </main>
+</div>
+
+<!-- NAVIGATION MOBILE -->
+<nav class="mobile-nav">
+  <button class="active" data-page="home">⌂<small>Accueil</small></button>
+  <button data-page="explore">⌕<small>Explorer</small></button>
+  <button data-page="projects">▤<small>Projets</small></button>
+  <button data-page="messages">✉<small>Messages</small></button>
+  <button data-page="profile">◉<small>Profil</small></button>
+</nav>
+
+<!-- FENÊTRE DE COLLABORATION -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <button class="modal-close" id="closeModal">×</button>
+
+    <p class="eyebrow">RAP CONNECT</p>
+    <h2 id="modalTitle">Proposer une collaboration</h2>
+
+    <form id="modalForm">
+      <label>
+        Type de collaboration
+        <select id="collabType">
+          <option>Featuring</option>
+          <option>Production / Beat</option>
+          <option>Écriture</option>
+          <option>Mixage / Mastering</option>
+          <option>Projet vidéo</option>
+        </select>
+      </label>
+
+      <label>
+        Ton message
+        <textarea id="collabMessage" rows="4"
+          placeholder="Présente ton idée en quelques mots..."></textarea>
+      </label>
+
+      <button class="btn btn-primary btn-full" type="submit">
+        Envoyer la proposition ↗
+      </button>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
