@@ -1,3 +1,428 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b0f">
+  <meta name="description" content="RAP CONNECT — la plateforme de collaboration entre artistes, beatmakers et producteurs.">
+  <title>RAP CONNECT — La scène commence ici</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <a class="brand" href="#" data-page="home">
+      <span class="brand-mark">R</span>
+      <span>RAP<span class="brand-accent">CONNECT</span></span>
+    </a>
+
+    <button class="profile-mini" data-page="profile">
+      <div class="avatar avatar-you js-user-initial">Y</div>
+      <div>
+        <strong class="js-user-name">Your name</strong>
+        <small class="js-user-role">Artiste · Paris</small>
+      </div>
+      <span class="online-dot"></span>
+    </button>
+
+    <nav class="main-nav">
+      <button class="nav-link active" data-page="home"><span>⌂</span> Accueil</button>
+      <button class="nav-link" data-page="explore"><span>⌕</span> Explorer</button>
+      <button class="nav-link" data-page="projects"><span>▤</span> Projets <b class="nav-count" id="navProjectCount">0</b></button>
+      <button class="nav-link" data-page="messages"><span>✉</span> Messages <b class="nav-count" id="navMessageCount">0</b></button>
+      <button class="nav-link" data-page="marketplace"><span>▣</span> Marketplace <b class="nav-count" id="navCartCount">0</b></button>
+      <button class="nav-link" data-page="profile"><span>◉</span> Mon profil</button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <button class="shop-banner" data-page="marketplace">
+        <span class="shop-emoji">🎛️</span>
+        <span class="shop-copy">
+          <strong>Marketplace</strong>
+          <small>Micros, casques, interfaces<br>jusqu'à -20 %</small>
+        </span>
+        <span class="shop-cta">Acheter ↗</span>
+      </button>
+
+      <div class="upgrade-card">
+        <span class="spark">✦</span>
+        <strong>Fais grandir ton réseau.</strong>
+        <p>Rencontre les talents qui feront ton prochain morceau.</p>
+        <button class="btn btn-light btn-small" data-page="explore">
+          Découvrir la scène
+        </button>
+      </div>
+
+      <button class="nav-link muted" id="settingsBtn"><span>⚙</span> Paramètres</button>
+      <div class="side-foot">RAP CONNECT <span>© 2026</span></div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+
+    <header class="topbar">
+      <div class="mobile-brand">
+        <span class="brand-mark">R</span>
+        RAP<span class="brand-accent">CONNECT</span>
+      </div>
+
+      <div class="breadcrumb" id="breadcrumb">
+        Ton espace créatif <span>/</span> Accueil
+      </div>
+
+      <div class="top-actions">
+        <label class="searchbox">
+          <span>⌕</span>
+          <input id="globalSearch" type="search" placeholder="Rechercher un talent, un son...">
+        </label>
+
+        <div class="notif-wrap">
+          <button class="icon-btn notification" id="notifBtn" aria-label="Notifications">
+            ♧<i id="notifBadge"></i>
+          </button>
+
+          <div class="notif-panel" id="notifPanel">
+            <div class="notif-head">
+              <strong>Notifications</strong>
+              <button class="text-link" id="markAllRead">Tout lire</button>
+            </div>
+            <div class="notif-list" id="notifList"></div>
+          </div>
+        </div>
+
+        <button class="avatar avatar-you top-avatar js-user-initial" data-page="profile">Y</button>
+      </div>
+    </header>
+
+    <!-- ACCUEIL -->
+    <section class="page active" id="page-home">
+
+      <div class="welcome-row">
+        <div>
+          <p class="eyebrow" id="todayLabel">MERCREDI 11 NOVEMBRE 2026</p>
+          <h1>La scène commence <span>ici.</span></h1>
+          <p class="subheading">
+            Connecte-toi aux bonnes personnes. Crée quelque chose qui compte.
+          </p>
+        </div>
+
+        <button class="btn btn-primary" id="openPost">
+          ＋ Partager une actualité
+        </button>
+      </div>
+
+      <div class="hero-banner">
+        <div class="hero-copy">
+          <span class="pill pill-purple">COMMUNAUTÉ MONDIALE</span>
+
+          <h2>Un talent. Une rencontre.<br><em>Un nouveau morceau.</em></h2>
+
+          <p>
+            Artistes, beatmakers, producteurs et créatifs :
+            faites avancer vos projets ensemble.
+          </p>
+
+          <button class="btn btn-white" data-page="explore">
+            Explorer les talents <span>↗</span>
+          </button>
+        </div>
+
+        <div class="hero-art">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="hero-disc">RC<span>✦</span></div>
+          <div class="floating-tag tag-one">BEATS / 2026</div>
+          <div class="floating-tag tag-two">WORLDWIDE</div>
+          <div class="equalizer">
+            <i></i><i></i><i></i><i></i><i></i>
+            <i></i><i></i><i></i><i></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="stats-strip">
+        <div class="stat-card">
+          <small>MEMBRES ACTIFS</small>
+          <strong>12 480</strong>
+          <span>+8 % ce mois</span>
+        </div>
+        <div class="stat-card">
+          <small>MORCEAUX PARTAGÉS</small>
+          <strong>4 912</strong>
+          <span>+126 cette semaine</span>
+        </div>
+        <div class="stat-card">
+          <small>COLLABORATIONS</small>
+          <strong>1 340</strong>
+          <span>depuis janvier</span>
+        </div>
+        <div class="stat-card">
+          <small>PAYS REPRÉSENTÉS</small>
+          <strong>46</strong>
+          <span>scène mondiale</span>
+        </div>
+      </div>
+
+      <!-- TOP 10 DU MOIS -->
+      <div class="top-banner">
+        <div class="top-banner-copy">
+          <p class="eyebrow">CLASSEMENT MENSUEL</p>
+          <h2>Top 10 <span>du mois</span></h2>
+          <p>
+            Les talents qui font bouger la scène en ce moment.
+            Clique sur un profil pour voir ses infos et ses projets.
+          </p>
+          <span class="top-banner-tag">MISE À JOUR · 01 DÉC.</span>
+        </div>
+
+        <div class="marquee" aria-label="Top 10 du mois">
+          <div class="marquee-track" id="chartTrack"></div>
+        </div>
+      </div>
+
+      <!-- ROOKIES -->
+      <div class="section-heading section-gap">
+        <div>
+          <p class="eyebrow">NOUVELLES VOIX</p>
+          <h2>Top 5 rookies du mois</h2>
+        </div>
+        <span class="result-count">Meilleures stats chez les nouveaux</span>
+      </div>
+
+      <div class="rookie-grid" id="rookieGrid"></div>
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">LE FIL DE LA SCÈNE</p>
+          <h2>Actualités & appels</h2>
+        </div>
+        <button class="text-link" id="openPostInline">＋ Publier ↗</button>
+      </div>
+
+      <div class="feed" id="feedList"></div>
+
+      <div class="section-heading section-gap">
+        <div>
+          <p class="eyebrow">TON UNIVERS</p>
+          <h2>À découvrir pour toi</h2>
+        </div>
+        <button class="text-link" data-page="explore">Tout explorer ↗</button>
+      </div>
+
+      <div class="universe-tabs">
+        <button class="universe-tab active" data-universe="all">Pour toi</button>
+        <button class="universe-tab" data-universe="artist">Univers artistes</button>
+        <button class="universe-tab" data-universe="producer">Univers producteurs</button>
+        <button class="universe-tab" data-universe="community">Scène mondiale</button>
+      </div>
+
+      <div class="content-grid" id="talentGrid"></div>
+
+      <div class="section-heading section-gap">
+        <div>
+          <p class="eyebrow">COLLABORE MAINTENANT</p>
+          <h2>Appels à projets ouverts</h2>
+        </div>
+        <button class="text-link" data-page="explore">Tout voir ↗</button>
+      </div>
+
+      <div class="opportunity-grid" id="opportunityGrid"></div>
+
+      <div class="community-strip">
+        <div class="community-icon">✳</div>
+        <div>
+          <strong>Les collaborations n'ont pas de frontières.</strong>
+          <p>
+            Découvre les sorties, appels à projets et talents actifs partout dans le monde.
+          </p>
+        </div>
+        <button class="btn btn-outline" data-page="explore">Voir les publications</button>
+      </div>
+    </section>
+
+    <!-- EXPLORER -->
+    <section class="page" id="page-explore">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">TROUVE TON PROCHAIN COLLABORATEUR</p>
+          <h1>Explorer la scène</h1>
+          <p class="subheading">Des profils, des sons et des idées à connecter.</p>
+        </div>
+        <span class="result-count" id="resultCount">6 talents</span>
+      </div>
+
+      <div class="filter-row">
+        <label class="searchbox filter-search">
+          <span>⌕</span>
+          <input id="exploreSearch" type="search" placeholder="Nom, spécialité, style, ville...">
+        </label>
+
+        <select id="roleFilter">
+          <option value="all">Tous les profils</option>
+          <option value="Artiste">Artistes</option>
+          <option value="Producteur">Producteurs</option>
+          <option value="Beatmaker">Beatmakers</option>
+          <option value="Ingénieur son">Ingénieurs son</option>
+        </select>
+
+        <select id="genreFilter">
+          <option value="all">Tous les styles</option>
+          <option>Trap</option>
+          <option>Drill</option>
+          <option>Boom bap</option>
+          <option>Afro</option>
+          <option>R&B</option>
+          <option>Rap mélodique</option>
+        </select>
+      </div>
+
+      <div class="content-grid explore-grid" id="exploreGrid"></div>
+
+      <div class="section-heading section-gap">
+        <div>
+          <p class="eyebrow">APPELS À PROJETS</p>
+          <h2>Opportunités ouvertes</h2>
+        </div>
+      </div>
+
+      <div class="opportunity-grid" id="opportunityGridExplore"></div>
+    </section>
+
+    <!-- PROJETS -->
+    <section class="page" id="page-projects">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">DU PREMIER MESSAGE AU MORCEAU FINAL</p>
+          <h1>Mes projets</h1>
+          <p class="subheading">Organise tes collaborations au même endroit.</p>
+        </div>
+        <button class="btn btn-primary" id="newProject">＋ Nouveau projet</button>
+      </div>
+
+      <div class="project-stats">
+        <div><small>EN COURS</small><strong id="statCourse">00</strong></div>
+        <div><small>EN ATTENTE</small><strong id="statPending">00</strong></div>
+        <div><small>TERMINÉS</small><strong id="statDone">00</strong></div>
+      </div>
+
+      <div class="mini-tabs" id="projectTabs">
+        <button class="universe-tab active" data-project-filter="all">Tous</button>
+        <button class="universe-tab" data-project-filter="En cours">En cours</button>
+        <button class="universe-tab" data-project-filter="En attente">En attente</button>
+        <button class="universe-tab" data-project-filter="Terminé">Terminés</button>
+      </div>
+
+      <div class="project-list" id="projectList"></div>
+    </section>
+
+    <!-- MESSAGES -->
+    <section class="page" id="page-messages">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">FAIS AVANCER LES IDÉES</p>
+          <h1>Messages</h1>
+          <p class="subheading">Tes échanges et propositions de collaboration.</p>
+        </div>
+      </div>
+
+      <div class="messages-layout">
+        <div class="conversation-list" id="conversationList"></div>
+        <div class="chat-panel" id="chatPanel"></div>
+      </div>
+    </section>
+
+    <!-- MARKETPLACE -->
+    <section class="page" id="page-marketplace">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">LE MATOS DES PROS</p>
+          <h1>Marketplace</h1>
+          <p class="subheading">Micros, casques, interfaces et contrôleurs sélectionnés pour la scène.</p>
+        </div>
+        <button class="btn btn-primary" id="openCart">
+          🛒 Panier <b class="cart-count-inline" id="cartCount">0</b>
+        </button>
+      </div>
+
+      <div class="mini-tabs" id="marketTabs">
+        <button class="universe-tab active" data-market-cat="all">Tout</button>
+        <button class="universe-tab" data-market-cat="Micros">Micros</button>
+        <button class="universe-tab" data-market-cat="Casques">Casques</button>
+        <button class="universe-tab" data-market-cat="Interfaces">Interfaces</button>
+        <button class="universe-tab" data-market-cat="Monitoring">Monitoring</button>
+        <button class="universe-tab" data-market-cat="Contrôleurs">Contrôleurs</button>
+        <button class="universe-tab" data-market-cat="Logiciels">Logiciels</button>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+
+      <div class="community-strip section-gap">
+        <div class="community-icon">◈</div>
+        <div>
+          <strong>Livraison offerte dès 99 € · retours 30 jours.</strong>
+          <p>Matériel testé par la communauté. Paiement sécurisé et support 7j/7.</p>
+        </div>
+        <button class="btn btn-outline" id="openCartAlt">Voir mon panier</button>
+      </div>
+    </section>
+
+    <!-- PROFIL -->
+    <section class="page" id="page-profile">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">TON IDENTITÉ CRÉATIVE</p>
+          <h1>Mon profil</h1>
+          <p class="subheading">Présente ton univers et les projets que tu veux créer.</p>
+        </div>
+        <button class="btn btn-outline" id="editProfile">Modifier le profil</button>
+      </div>
+
+      <div class="profile-cover">
+        <div class="profile-avatar-large js-user-initial">Y</div>
+
+        <div class="profile-info">
+          <span class="pill pill-green" id="profileStatus">● DISPONIBLE POUR COLLABORER</span>
+          <h2 id="profileName">Your name</h2>
+          <p id="profileMeta">Artiste · Paris, France</p>
+          <div class="tag-list" id="profileGenres"></div>
+        </div>
+      </div>
+
+      <div class="project-stats profile-stats">
+        <div><small>PROJETS</small><strong id="profileProjects">0</strong></div>
+        <div><small>SONS AU PORTFOLIO</small><strong id="profileTracks">0</strong></div>
+        <div><small>COLLABORATIONS</small><strong id="profileCollabs">0</strong></div>
+      </div>
+
+      <div class="profile-columns">
+        <div class="panel">
+          <div class="panel-title"><h3>À propos</h3></div>
+          <p id="profileBio"></p>
+          <div class="detail-line"><span>Recherche</span><strong id="profileLooking"></strong></div>
+          <div class="detail-line"><span>Langues</span><strong id="profileLanguages"></strong></div>
+          <div class="detail-line"><span>Objectif</span><strong id="profileGoal"></strong></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-title">
+            <h3>Mon portfolio</h3>
+            <button class="text-link" id="addTrack">＋ Ajouter</button>
+          </div>
+          <div class="portfolio-list" id="portfolioList"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="main-footer">
+      <span>RAP CONNECT — Plus qu'une appli, une communauté.</span>
+      <span>Concept démo · 2026</span>
     </footer>
 
   </main>
@@ -22,6 +447,185 @@
     <h2 id="collabTitle">Proposer une collaboration</h2>
 
     <form id="collabForm">
+      <label>
+        Type de collaboration
+        <select class="input" id="collabType">
+          <option>Featuring</option>
+          <option>Production / Beat</option>
+          <option>Écriture</option>
+          <option>Mixage / Mastering</option>
+          <option>Projet vidéo</option>
+        </select>
+      </label>
+
+      <label>
+        Ton message
+        <textarea class="input" id="collabMessage" rows="4"
+          placeholder="Présente ton idée en quelques mots..."></textarea>
+      </label>
+
+      <button class="btn btn-primary btn-full" type="submit">
+        Envoyer la proposition ↗
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- FENÊTRE DE PUBLICATION -->
+<div class="modal-backdrop" id="postBackdrop">
+  <div class="modal">
+    <button class="modal-close" data-close="postBackdrop">×</button>
+
+    <p class="eyebrow">LE FIL DE LA SCÈNE</p>
+    <h2>Partager une actualité</h2>
+
+    <form id="postForm">
+      <label>
+        Type de publication
+        <select class="input" id="postType">
+          <option>Actualité</option>
+          <option>Sortie</option>
+          <option>Appel à projet</option>
+        </select>
+      </label>
+
+      <label>
+        Ton message
+        <textarea class="input" id="postText" rows="4"
+          placeholder="Une sortie, une session, une recherche de collab..."></textarea>
+      </label>
+
+      <button class="btn btn-primary btn-full" type="submit">
+        Publier ↗
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- FENÊTRE DE NOUVEAU PROJET -->
+<div class="modal-backdrop" id="projectBackdrop">
+  <div class="modal">
+    <button class="modal-close" data-close="projectBackdrop">×</button>
+
+    <p class="eyebrow">DU PREMIER MESSAGE AU MORCEAU FINAL</p>
+    <h2>Nouveau projet</h2>
+
+    <form id="projectForm">
+      <label>
+        Titre du projet
+        <input class="input" id="projectTitle" type="text" placeholder="Ex. EP commun — 4 titres" required>
+      </label>
+
+      <label>
+        Participants
+        <input class="input" id="projectPeople" type="text" placeholder="Ex. Toi · NOVA Beats">
+      </label>
+
+      <label>
+        Statut
+        <select class="input" id="projectStatus">
+          <option>En attente</option>
+          <option>En cours</option>
+        </select>
+      </label>
+
+      <label>
+        Description
+        <textarea class="input" id="projectDesc" rows="3"
+          placeholder="Objectif, style, prochaine étape..."></textarea>
+      </label>
+
+      <button class="btn btn-primary btn-full" type="submit">
+        Créer le projet ↗
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- FENÊTRE D'ÉDITION DU PROFIL -->
+<div class="modal-backdrop" id="profileBackdrop">
+  <div class="modal modal-wide">
+    <button class="modal-close" data-close="profileBackdrop">×</button>
+
+    <p class="eyebrow">TON IDENTITÉ CRÉATIVE</p>
+    <h2>Modifier le profil</h2>
+
+    <form id="profileForm">
+      <div class="form-grid">
+        <label>
+          Nom d'artiste
+          <input class="input" id="pfName" type="text" required>
+        </label>
+        <label>
+          Rôle
+          <select class="input" id="pfRole">
+            <option>Artiste</option>
+            <option>Beatmaker</option>
+            <option>Producteur</option>
+            <option>Ingénieur son</option>
+          </select>
+        </label>
+        <label>
+          Ville
+          <input class="input" id="pfCity" type="text">
+        </label>
+        <label>
+          Styles (séparés par des virgules)
+          <input class="input" id="pfGenres" type="text">
+        </label>
+        <label>
+          Je recherche
+          <input class="input" id="pfLooking" type="text">
+        </label>
+        <label>
+          Langues
+          <input class="input" id="pfLanguages" type="text">
+        </label>
+        <label>
+          Objectif
+          <input class="input" id="pfGoal" type="text">
+        </label>
+        <label class="check-row">
+          <input id="pfAvailable" type="checkbox">
+          Disponible pour collaborer
+        </label>
+      </div>
+
+      <label>
+        Bio
+        <textarea class="input" id="pfBio" rows="3"></textarea>
+      </label>
+
+      <button class="btn btn-primary btn-full" type="submit">
+        Enregistrer ↗
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- FENÊTRE D'AJOUT DE SON -->
+<div class="modal-backdrop" id="trackBackdrop">
+  <div class="modal">
+    <button class="modal-close" data-close="trackBackdrop">×</button>
+
+    <p class="eyebrow">MON PORTFOLIO</p>
+    <h2>Ajouter un son</h2>
+
+    <form id="trackForm">
+      <label>
+        Titre
+        <input class="input" id="trackTitle" type="text" placeholder="Ex. Nuit blanche (démo)" required>
+      </label>
+
+      <label>
+        Type
+        <select class="input" id="trackType">
+          <option>Single</option>
+          <option>Démo</option>
+          <option>Beat</option>
+        </select>
+      </label>
+
       <button class="btn btn-primary btn-full" type="submit">
         Ajouter au portfolio ↗
       </button>
@@ -69,3 +673,20 @@
     <h2>Paramètres de la démo</h2>
 
     <p class="modal-note">
+      Toutes tes données (profil, projets, publications, messages) sont
+      enregistrées dans ton navigateur. Réinitialiser restaure la démo d'origine.
+    </p>
+
+    <button class="btn btn-outline btn-full" id="resetDemo" type="button">
+      Réinitialiser toutes les données
+    </button>
+
+    <p class="modal-footnote">Version démo 2.0 · 2026</p>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
