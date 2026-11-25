@@ -97,13 +97,13 @@ Aucune installation supplémentaire n'est nécessaire pour consulter le prototyp
 
 ## 9. Hébergement et déploiement
 
-Le site RAP CONNECT est hébergé sur **Wasmer**.
+Le site RAP CONNECT est hébergé sur **Vercel**, une plateforme permettant de déployer des sites web et de les rendre accessibles en ligne.
 
-Wasmer permet de déployer des applications et des sites web afin de les rendre accessibles en ligne.
+- **Plateforme d'hébergement :** Vercel.
+- **Site officiel :** https://vercel.com/
+- **Accès au projet :** via l'adresse web publique générée après le déploiement.
 
-- **Plateforme :** Wasmer.
-- **Site officiel :** https://wasmer.io/
-- **Accès au projet :** via l'adresse web fournie après le déploiement.
+Vercel permet de publier le site et de le rendre accessible depuis un navigateur web.
 
 ## 10. Améliorations futures
 
@@ -126,11 +126,11 @@ RAP CONNECT est un projet qui vise à rapprocher les acteurs de la scène rap in
 
 ---
 
-**Informations générales**
+## Informations générales
 
 - **Nom du projet :** RAP CONNECT
 - **Type :** Site web communautaire musical
 - **Domaine :** Musique et culture rap
 - **Langages utilisés :** HTML5, CSS3 et JavaScript
-- **Hébergement :** Wasmer
+- **Hébergement :** Vercel
 - **Slogan :** Plus qu'une appli, une communauté.
