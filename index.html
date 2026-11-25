@@ -37,10 +37,20 @@
       <button class="nav-link" data-page="explore"><span>⌕</span> Explorer</button>
       <button class="nav-link" data-page="projects"><span>▤</span> Projets <b class="nav-count" id="navProjectCount">0</b></button>
       <button class="nav-link" data-page="messages"><span>✉</span> Messages <b class="nav-count" id="navMessageCount">0</b></button>
+      <button class="nav-link" data-page="marketplace"><span>▣</span> Marketplace <b class="nav-count" id="navCartCount">0</b></button>
       <button class="nav-link" data-page="profile"><span>◉</span> Mon profil</button>
     </nav>
 
     <div class="sidebar-bottom">
+      <button class="shop-banner" data-page="marketplace">
+        <span class="shop-emoji">🎛️</span>
+        <span class="shop-copy">
+          <strong>Marketplace</strong>
+          <small>Micros, casques, interfaces<br>jusqu'à -20 %</small>
+        </span>
+        <span class="shop-cta">Acheter ↗</span>
+      </button>
+
       <div class="upgrade-card">
         <span class="spark">✦</span>
         <strong>Fais grandir ton réseau.</strong>
@@ -159,6 +169,34 @@
           <span>scène mondiale</span>
         </div>
       </div>
+
+      <!-- TOP 10 DU MOIS -->
+      <div class="top-banner">
+        <div class="top-banner-copy">
+          <p class="eyebrow">CLASSEMENT MENSUEL</p>
+          <h2>Top 10 <span>du mois</span></h2>
+          <p>
+            Les talents qui font bouger la scène en ce moment.
+            Clique sur un profil pour voir ses infos et ses projets.
+          </p>
+          <span class="top-banner-tag">MISE À JOUR · 01 DÉC.</span>
+        </div>
+
+        <div class="marquee" aria-label="Top 10 du mois">
+          <div class="marquee-track" id="chartTrack"></div>
+        </div>
+      </div>
+
+      <!-- ROOKIES -->
+      <div class="section-heading section-gap">
+        <div>
+          <p class="eyebrow">NOUVELLES VOIX</p>
+          <h2>Top 5 rookies du mois</h2>
+        </div>
+        <span class="result-count">Meilleures stats chez les nouveaux</span>
+      </div>
+
+      <div class="rookie-grid" id="rookieGrid"></div>
 
       <div class="section-heading">
         <div>
@@ -300,6 +338,41 @@
       </div>
     </section>
 
+    <!-- MARKETPLACE -->
+    <section class="page" id="page-marketplace">
+      <div class="page-heading">
+        <div>
+          <p class="eyebrow">LE MATOS DES PROS</p>
+          <h1>Marketplace</h1>
+          <p class="subheading">Micros, casques, interfaces et contrôleurs sélectionnés pour la scène.</p>
+        </div>
+        <button class="btn btn-primary" id="openCart">
+          🛒 Panier <b class="cart-count-inline" id="cartCount">0</b>
+        </button>
+      </div>
+
+      <div class="mini-tabs" id="marketTabs">
+        <button class="universe-tab active" data-market-cat="all">Tout</button>
+        <button class="universe-tab" data-market-cat="Micros">Micros</button>
+        <button class="universe-tab" data-market-cat="Casques">Casques</button>
+        <button class="universe-tab" data-market-cat="Interfaces">Interfaces</button>
+        <button class="universe-tab" data-market-cat="Monitoring">Monitoring</button>
+        <button class="universe-tab" data-market-cat="Contrôleurs">Contrôleurs</button>
+        <button class="universe-tab" data-market-cat="Logiciels">Logiciels</button>
+      </div>
+
+      <div class="product-grid" id="productGrid"></div>
+
+      <div class="community-strip section-gap">
+        <div class="community-icon">◈</div>
+        <div>
+          <strong>Livraison offerte dès 99 € · retours 30 jours.</strong>
+          <p>Matériel testé par la communauté. Paiement sécurisé et support 7j/7.</p>
+        </div>
+        <button class="btn btn-outline" id="openCartAlt">Voir mon panier</button>
+      </div>
+    </section>
+
     <!-- PROFIL -->
     <section class="page" id="page-profile">
       <div class="page-heading">
@@ -361,6 +434,7 @@
   <button data-page="explore">⌕<small>Explorer</small></button>
   <button data-page="projects">▤<small>Projets</small></button>
   <button data-page="messages">✉<small>Messages</small></button>
+  <button data-page="marketplace">▣<small>Shop</small></button>
   <button data-page="profile">◉<small>Profil</small></button>
 </nav>
 
@@ -564,6 +638,29 @@
   <div class="modal modal-wide">
     <button class="modal-close" data-close="talentBackdrop">×</button>
     <div id="talentBody"></div>
+  </div>
+</div>
+
+<!-- FICHE MEMBRE (CLASSEMENT) -->
+<div class="modal-backdrop" id="memberBackdrop">
+  <div class="modal modal-wide">
+    <button class="modal-close" data-close="memberBackdrop">×</button>
+    <div id="memberBody"></div>
+  </div>
+</div>
+
+<!-- PANIER -->
+<div class="modal-backdrop" id="cartBackdrop">
+  <div class="modal">
+    <button class="modal-close" data-close="cartBackdrop">×</button>
+
+    <p class="eyebrow">MARKETPLACE</p>
+    <h2>Ton panier</h2>
+
+    <div id="cartBody"></div>
+    <div class="cart-total" id="cartTotal"></div>
+
+    <button class="btn btn-primary btn-full" id="checkoutBtn">Commander ↗</button>
   </div>
 </div>
 
